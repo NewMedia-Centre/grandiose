@@ -368,7 +368,7 @@ void videoReceiveExecute(napi_env env, void *data)
   switch (res)
   {
   case NDIlib_frame_type_none:
-    printf("No data received.\n");
+    // printf("No data received.\n");
     c->status = GRANDIOSE_NOT_FOUND;
     c->errorMsg = "No video data received in the requested time interval.";
     break;
@@ -564,7 +564,7 @@ void audioReceiveExecute(napi_env env, void *data)
   switch (NDIlib_recv_capture_v2(c->recv, nullptr, &c->audioFrame, nullptr, c->wait))
   {
   case NDIlib_frame_type_none:
-    printf("No data received.\n");
+    // printf("No data received.\n");
     c->status = GRANDIOSE_NOT_FOUND;
     c->errorMsg = "No audio data received in the requested time interval.";
     break;
@@ -836,7 +836,7 @@ void metadataReceiveExecute(napi_env env, void *data)
   switch (NDIlib_recv_capture_v2(c->recv, nullptr, nullptr, &c->metadataFrame, c->wait))
   {
   case NDIlib_frame_type_none:
-    printf("No data received.\n");
+    // printf("No data received.\n");
     c->status = GRANDIOSE_NOT_FOUND;
     c->errorMsg = "No metadata received in the requested time interval.";
     break;
